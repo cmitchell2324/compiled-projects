@@ -1,0 +1,16 @@
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\bin\Debug\net5.0\TestConsoleApp.exe
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\bin\Debug\net5.0\TestConsoleApp.deps.json
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\bin\Debug\net5.0\TestConsoleApp.runtimeconfig.json
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\bin\Debug\net5.0\TestConsoleApp.runtimeconfig.dev.json
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\bin\Debug\net5.0\TestConsoleApp.dll
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\bin\Debug\net5.0\ref\TestConsoleApp.dll
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\bin\Debug\net5.0\TestConsoleApp.pdb
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.csproj.AssemblyReference.cache
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.AssemblyInfoInputs.cache
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.AssemblyInfo.cs
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.dll
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\obj\Debug\net5.0\ref\TestConsoleApp.dll
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.pdb
+C:\Users\Cameron Mitchell\OneDrive - Lebanon Valley College\GitHub Compiled Projects\compiled-cds-projects-main\tic-tac-toe-implementation\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.genruntimeconfig.cache
