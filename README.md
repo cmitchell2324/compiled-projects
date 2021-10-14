@@ -1,2 +1,2 @@
 # compiled-projects
-A list of various programming projects that I have worked on through the course of my years at Lebanon Valley College
+A list of various programming projects that I have worked on during my time at Lebanon Valley College and my internship experience at Select Medical in Mechanicsburg, PA
