@@ -1,8 +1,9 @@
 # compiled-projects
 A list of various programming projects that I have worked on during my classes at Lebanon Valley College, my free time, and my internship experience at Select Medical in Mechanicsburg, PA.
 
-| LocationGL_Update                  | UiPath Studio automation that updates the financial information of 1600 Select Medical rehab clinics.                                                      |
+| Project Name                       | Description                                                                                                                                                |
 |------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| LocationGL_Update                  | UiPath Studio automation that updates the financial information of 1600 Select Medical rehab clinics.                                                      |
 | Medicare_Advantage_FileRetrieval   | UiPath Studio automation that downloads various Medicare report files, converts .xlsx tabs to the CSV format, and stores them in a shared folder location. |
 | Numpy Spelling Check               | A spelling check implemented in Python that utilizes Levenshtein distance to calculate the top 5 most likely correct spelled words.                        |
 | Tic Tac Toe C#                     | A simple command line Tic Tac Toe game that is implemented in C#, managing every possible scenario to the game.                                            |
