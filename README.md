@@ -10,3 +10,4 @@ A list of various programming projects that I have worked on during my classes a
 | Videogame Countdown Website        | A website that utilizes HTML, CSS, JavaScript, and the jQuery library to display a live release countdown timer of various upcoming videogames.            |
 | Work Stealing Parallel Scheduler   | A project implemented in Java that demonstrates parallel computation with workers having the ability to steal tasks from others.                           |
 | Asynchronous Python Network Server | A network server implemented in Python that concurrently GETs the contents of randomly generated text files.                                               |
+| Choose Your Own Adventure          | A front-end website that allows the user to engage in a choose your own adventure. Each choice represents a score that dictates a certain outcome.         |
