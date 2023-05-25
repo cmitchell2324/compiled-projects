@@ -1,0 +1,158 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script>
+    /*
+        An entry prompt that asks for the user's name. Once they enter their name, a second prompt is displayed that 
+        asks the individual if they like videogames. If they respond with anything besides "yes", they will be prompted
+        to answer again. This is meant as a joke considering the website is centered around displaying countdown timers 
+        for videogames.
+    */
+    var name = prompt("Please enter your name", "");
+    var isValidAnswer = false;
+    while (!isValidAnswer) {
+        var answer = prompt("Do you like videogames?", "");
+        if (answer.toLowerCase() == "yes") {
+            isValidAnswer = true;
+        } else {
+            alert('There is only one right answer :) please type yes');
+        }
+    }
+
+    /*
+        A function that handles retrieving the name of the game from the the drop-down list on the screen. This function will also 
+        display the user's name from what they initially entered and the game that they selected. There is also a call to another function
+        (displayCountdownTimer(chosengame)) that handles displaying the timer on the screen based on which game was picked.
+    */
+    function chooseGame() {
+        var mylist = $("#gamelist")[0];
+        document.getElementById("favoritegame").value = mylist.options[mylist.selectedIndex].text;
+        var chosengame = document.getElementById("favoritegame").value;
+        alert("Hello, " + name + "! You are looking at the countdown to the release date of " + chosengame + ". Enjoy!");
+        displayCountdownTimer(chosengame)
+    }
+
+    /*
+        This function simply parses the release date of each respective game to be passed on to updateCountdownTimer. 
+    */
+    function displayCountdownTimer(chosengame) {
+        future = null;
+        if (chosengame == "Pikmin 4 (07/21/23)") {
+            future = Date.parse("July 21, 2023 12:00:00")
+        } else if (chosengame == "Starfield (09/06/23)") {
+            future = Date.parse("September 6, 2023 12:00:00")
+        } else if (chosengame == "Mortal Kombat 1 (09/19/23)") {
+            future = Date.parse("September 19, 2023 12:00:00")
+        } else {
+            future = Date.parse("November 10, 2023 12:00:00")
+        }
+
+        updateCountdownTimer(future);
+    }
+
+    /*
+        This is the function where most of the work is truly be done in the script. The current date is calculated and then subtracted from
+        the release date to calculate the remaining time until launch. The following lines of code convert the days, hours, minutes, and seconds 
+        into a reasonable format that will be used in the counter. The setInterval function is placed outside of the updateCountdownTimer to prevent
+        recursion of the updateCountdownTimer method. It will simply update the clock every second.
+    */
+    function updateCountdownTimer() {
+        var now = Date.parse(new Date());
+        var date_difference = future - now;
+        var days = Math.floor(date_difference / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(date_difference / (1000 * 60 * 60));
+        var mins = Math.floor(date_difference / (1000 * 60));
+        var secs = Math.floor(date_difference / 1000);
+
+        var d = days;
+        var h = hours - days * 24;
+        var m = mins - hours * 60;
+        var s = secs - mins * 60;
+
+        document.getElementById("timer").innerHTML = '<div>' + d + '<span>Days</span></div>' +
+            '<div>' + h + '<span>Hours</span></div>' +
+            '<div>' + m + '<span>Minutes</span></div>' +
+            '<div>' + s + '<span>Seconds</span></div>';
+    }
+    setInterval(updateCountdownTimer, 1000);
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videogame Countdown</title>
+
+    <!--
+        CSS styling for various div ids. Handles the background image, colors, text size, etc.
+    -->
+    <style>
+        body {
+            background-image: url('wallpaper.jpg');
+        }
+
+        #gameform {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            margin-top: 200px
+        }
+
+        #timer {
+            font-size: 3em;
+            font-weight: 100;
+            padding: 20px;
+            width: 700px;
+            color: purple;
+            margin: auto;
+        }
+
+        #timer div {
+            display: inline-block;
+            min-width: 90px;
+            padding: 15px;
+            background: skyblue;
+            border-radius: 10px;
+            border: 2px solid skyblue;
+            margin: 15px;
+        }
+
+        #timer div span {
+            color: purple;
+            display: block;
+            margin-top: 45px;
+            font-size: 20px;
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        This generates the drop-down list and displays a list of available game options. Based on what is chosen, the above script will execute
+        to display the correct time. The body also stores the timer DIV which helps create the styling for the timer. The styling for the timer as well as the overall
+        logic were chosen from various online tutorials and modified to fit into the given context of the problem.
+    -->
+    <form id="gameform">
+        <b style="color: white">Select your favorite game to display countdown to release date</b>
+        <select id="gamelist" onchange="chooseGame()">
+            <option> ---Choose game--- </option>
+            <option> Pikmin 4 (07/21/23) </option>
+            <option> Starfield (09/06/23) </option>
+            <option> Mortal Kombat 1 (09/19/23) </option>
+            <option> The Day Before (11/10/23) </option>
+        </select>
+        <p style="color: white">Your selected game is:
+            <input type="text" id="favoritegame" size="20">
+        </p>
+    </form>
+
+    <div id="timer"></div>
+</body>
+
+</html>
