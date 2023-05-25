@@ -1,0 +1,83 @@
+body{width: 100%; margin-top: 50px; padding: 0; background-color: black;}
+
+
+h1{
+    font-size: 3em;
+ 
+}
+
+
+    
+p{
+    font-family: "Arial";
+    font-size: 30px;
+    margin: 10px 0 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    /* added animation property to show the character one at a time*/
+    animation: type 6s steps(60, end); 
+    }
+    @keyframes type{ 
+        from { 
+             width: 0; 
+             } 
+         }
+.button_container{
+    text-align: center;
+
+}
+.btn{
+    border: 1 px solid white;
+    background: #DEB01F;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: "montserrat";
+    margin: 10px;
+    transition: 1s;
+    float: right;
+    background: #a9bdff;
+    margin-right: 50%;
+}
+.btn:hover{
+    color: white;
+}
+
+.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: blue;
+    z-index: -1;
+    transition: 1s;
+}
+
+.btn::before{
+    top: 0;
+    border-radius: 50% 50%
+}
+
+#nextBtn{
+    float: right;
+    background: #a9bdff;
+    margin-right: 50%;
+}
+.page{
+    height: 500px; 
+    padding:30px; 
+    display: none; 
+    color: black;
+    background-color: #ffa191; 
+}
+#page1{
+    background-color: #ffa191; 
+   
+    }
+#page2{
+    background-color: #c9bdbb; 
+    }
+
+.choices{
+    font-size:xx-large;
+}

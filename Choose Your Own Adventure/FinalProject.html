@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Final Project</title>
+        <link rel="stylesheet" href="Styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </head>
+
+    <script>
+       
+        $(document).ready(function(){
+            // Assignment of variables to be utilized throughout the rest of the game
+            var playerName  = prompt("Enter your character's name:");
+            document.getElementById("playerName").innerHTML = " <em>'" + playerName + "</em>' ";
+            var totalScore = 0;
+            var weaponChoice = "";
+            var pathChoice = "";
+            var riverChoice = "";
+            var foodChoice = "";
+            var entryChoice = "";
+            var strategyChoice = "";
+
+
+            // Start Game transition that fades in the first screen
+			$('#StartGame').click(function(){
+				$('#main_menu').hide();
+                $('#page1').fadeIn(3000)();	
+            });
+
+            // Hides page 1 and fades in page 2
+            $('#nextBtn').click(function(){
+				$('#page1').hide();
+                $('#page2').fadeIn(1000)();	
+            });
+
+            /*
+                Weapon choice. There are a total of four story interactions/choices here.
+                The conditional statements include various scenarios depending on what choices you have chosen previously.
+                At each conditional path, the score is increased accordingly.
+            */
+            $('#nextBtn2').click(function(){
+                var weapon = document.getElementsByName("weapon");
+                for(i = 0; i < weapon.length; i++) {
+                    if(weapon[i].checked) {
+                        weaponChoice = weapon[i].value;
+                        if(weaponChoice == "Magnar Cutlass") {
+                            totalScore += 2;
+                        } else if(weaponChoice == "Cursed Blade of Tarabeth") {
+                            totalScore += 3;
+                        } else if(weaponChoice == "Zamorkian Kitana") {
+                            totalScore += 2;
+                        } else if(weaponChoice == "Spork") {
+                            totalScore += 1;
+                        }
+                        alert("You have chose " + weaponChoice + " as your weapon of choice.");
+                    }
+                }
+				$('#page2').hide();
+                $('#page3').fadeIn(1000)();	
+            });
+
+            /*
+                Path choice. There are a total of two story interactions/choices here.
+                The conditional statements include various scenarios depending on what choices you have chosen previously.
+                At each conditional path, the score is increased accordingly.
+            */
+            $('#nextBtn3').click(function(){
+                var path = document.getElementsByName("path");
+                for(i = 0; i < path.length; i++) {
+                    if(path[i].checked) {
+                        pathChoice = path[i].value;
+                        if(pathChoice == "Main Path") {
+                            totalScore += 1;
+                            alert("You have chosen to go the main path, avoiding the extra resources.");
+                        } else if(pathChoice == "Stranger Advice") {
+                            totalScore += 3
+                            alert("You have chosen to get the extra resource. You have found a shield!");
+                        }
+                    }
+                }
+				$('#page3').hide();
+                $('#page4').fadeIn(1000)();	
+            });
+
+            /*
+                River choice. There are a total of three story interactions/choices here.
+                The conditional statements include various scenarios depending on what choices you have chosen previously.
+                At each conditional path, the score is increased accordingly.
+            */
+            $('#nextBtn4').click(function(){
+                var river = document.getElementsByName("river");
+                for(i = 0; i < river.length; i++) {
+                    if(river[i].checked) {
+                        riverChoice = river[i].value;
+                        if(riverChoice == "Wooden Bridge") {
+                            totalScore += 2;
+                            alert("You decide to take the wooden bridge. Just as you cross over to the other side, the bridge crumbles.");
+                        } else if (riverChoice == "Jump Boulders") {
+                            totalScore += 3;
+                            alert("You jump across the boulders and discover that they are completely dry! You make it across safely.");
+                        } else if (riverChoice == "Swim Across"){
+                            totalScore += 1;
+                            alert("You decide to swim across the river, getting absolutely soaked in the process. You are cold and bogged down.");
+                        }
+                    }
+                }
+				$('#page4').hide();
+                $('#page5').fadeIn(1000)();		
+            });
+
+            /*
+                Food choice. There are a total of three story interactions/choices here.
+                The conditional statements include various scenarios depending on what choices you have chosen previously.
+                At each conditional path, the score is increased accordingly.
+            */
+            $('#nextBtn5').click(function(){
+                var food = document.getElementsByName("food");
+                for(i = 0; i < food.length; i++) {
+                    if(food[i].checked) {
+                        foodChoice = food[i].value;
+                        if(foodChoice == "Hunt") {
+                            totalScore += 3;
+                            alert("You decide to hunt the small animal and successfully catch it. The food replenishes you!");
+                        } else if (foodChoice == "Mushroom") {
+                            totalScore += 1;
+                            alert("You eat the mushrooms and start to feel sick. Hopefully your luck doesn't run out!");
+                        } else if(foodChoice == "Ignore Hunger"){
+                            totalScore += 2;
+                            alert("You decide to ignore your hunger. It is best to get moving on towards the dragon.");
+                        }
+                    }
+                }
+				$('#page5').hide();
+                $('#page6').fadeIn(1000)();	
+            });
+
+             /*
+                Lair choice. There are a total of two story interactions/choices here.
+                The conditional statements include various scenarios depending on what choices you have chosen previously.
+                At each conditional path, the score is increased accordingly.
+            */
+            $('#nextBtn6').click(function(){
+                var lair = document.getElementsByName("lair");
+                for(i = 0; i < lair.length; i++) {
+                    if(lair[i].checked) {
+                        entryChoice = lair[i].value;
+                        if(entryChoice == "Cautious") {
+                            totalScore += 3;
+                            alert("You decide to enter cautiously. You are dealing with a dragon after all!");
+                        } else if(entryChoice == "Brazenly") {
+                            totalScore += 1;
+                            alert("You enter the cave screaming at the top of your lungs. This may not be the best choice!");
+                        }
+                    }
+                }
+				$('#page6').hide();
+                $('#page7').fadeIn(1000)();	
+            });
+
+            /*
+                Strategy choice. There are a total of six story interactions/choices here.
+                The conditional statements include various scenarios depending on what choices you have chosen previously.
+                At each conditional path, the score is increased accordingly.
+            */
+            
+            $('#nextBtn7').click(function() {
+                var strategy = document.getElementsByName("strategy");
+                for(i = 0; i < strategy.length; i++) {
+                    if(strategy[i].checked) {
+                        strategyChoice = strategy[i].value;
+                        if(strategyChoice == "Head" && entryChoice == "Cautious") {
+                            totalScore += 3;
+                            alert("You sneak up on the dragon and chop its head clean off!");
+                        } else if (strategyChoice == "Head" && entryChoice == "Brazenly") {
+                            totalScore += 3;
+                            alert("Despite not sneaking in, you are able to whack the dragon in the head. It keels over and dies.");
+                        } else if(strategyChoice == "Limbs") {
+                            totalScore += 2;
+                            alert("You aim for the dragon's limbs with your weapon and it bounces off. Despite this, the dragon's feelings are hurt and it dies of depression.")
+                        } else if(strategyChoice == "Heat" && pathChoice == "Stranger Advice" && riverChoice == "Swim Across") {
+                            totalScore += 1;
+                            alert("Lucky you! The shield comes in handy and blocks the heat from damaging you! The fire reflects back into the dragon's face and kills him. It also warms you up after the river swim!");
+                        } else if(strategyChoice == "Heat" && pathChoice == "Stranger Advice") {
+                            totalScore += 1;
+                            alert("Lucky you! The shield comes in handy and blocks the heat from damaging you! The fire reflects back into the dragon's face and kills him.");
+                        } else if(strategyChoice == "Defensive") {
+                            totalScore += 2;
+                            alert("You decide to play this defensively. The dragon eventually wears itself out and dies of exhaustion!");
+                        }
+                    }
+                }
+                document.getElementById("finalScore").innerHTML = " <em>'" + totalScore + "</em>' ";
+                $('#page7').hide();
+                $('#pageEnd').fadeIn(1000)();
+            });
+
+            // Refreshes the entire game to be played again
+            $("#StartOver").click(function(){
+                history.go(0);
+            });
+        });
+    </script>
+
+    <body>
+        <!--
+            Main menu div that will display the character's entered name and allow the user to begin their journey.
+        -->
+        <div id='main_menu' class='container' style="background-color:gray; height: 500px; padding: 10%">
+            <h1 id="title">The Adventure of <span id="playerName">_______</span></h1>
+            <div class="button_container">
+                <button class="btn btn1" id='StartGame'>
+                    <h1>Begin Journey</h1>
+                </button>
+            </div>
+        </div>
+
+        <!--
+            Entry text for page 1 which describes the entire story to the user. CSS styling is utilized to animate the text as it is appearing.
+        -->
+        <div id='page1' class="page">
+            <h1>Hello Traveler,</h1>
+            <div>  
+                <p>We are glad you have agreed to participate in this expedition. There has been unanimous reports of 
+                dragon tracks in </p>
+                <p>Silver Snake Forest. We ask you to follow these prints and search for further evidence.
+                As you may know,</p> 
+                <p>the dragon's lair is said to hold riches beyond comprehension. Upon discovery, we ask
+                you head back here with your findings.</p> 
+                <br>
+                <p>But...before you leave, grab equipment from the Blacksmith's shop.</p>
+                </div>
+                <button id="nextBtn" class="btn btn1">Next</button>
+                <p><em><strong>! Your actions affect the ending of the game !</strong></em></p>
+        </div>
+
+        <!--
+            Div that contains the radio buttons for weapon choices as well as text signifying that you have entered the Blacksmith's shop.
+        -->
+        <div id='page2' class="page">
+            <h1>Welcome to the Blacksmith's shop!</h1>
+            <p>Before you begin your adventure, choose a weapon from the shop: </p>
+            <div class = 'choices'>  
+                <div>
+                    <input type="radio" id = "magnar-cutlass" name="weapon" value="Magnar Cutlass" checked>
+                    <label for="Magnar Cutlass">Magnar Cutlass</label>
+                </div>
+                <div>
+                    <input type="radio" id = "cursed-blade" name="weapon" value="Cursed Blade of Tarabeth" checked>
+                    <label for="Cursed Blade of Tarabeth">Cursed Blade of Tarabeth</label>
+                </div>
+                <div>
+                    <input type="radio" id = "zamorkian-kitana" name="weapon" value="Zamorkian Kitana" checked>
+                    <label for="Zamorkian Kitana">Zamorkian Kitana</label>
+                </div>
+                <div>
+                    <input type="radio" id = "spork" name="weapon" value="Spork" checked>
+                    <label for="Spork">Spork</label>
+                </div>
+            </div>
+           <button id="nextBtn2" class="btn btn1">Next</button>
+        </div>
+
+        <!--
+            Div that contains the radio buttons for path choice as well as text signifying that you are currently on a trail waiting to make a choice.
+        -->
+        <div id='page3' class="page">
+            <h1>Now that you have chosen a weapon to defend yourself, you can head down the trail.</h1>
+            <p>As you leave the village, someone tells you about a slight detour from the trail that might have some extra resources. Do you decide 
+            <p>to stick to the main route or follow the stranger's advice?</p>
+            <div class = 'choices'>
+                <div>
+                    <input type="radio" id = "main-path" name="path" value="Main Path" checked>
+                    <label for="Main Path">Take the Main Path</label>
+                </div>
+                <div>
+                    <input type="radio" id = "stranger-advice" name="path" value="Stranger Advice" checked>
+                    <label for="Stranger Advice">Follow the stranger's advice</label>
+                </div>
+            </div>
+           <button id="nextBtn3" class="btn btn1">Next</button>
+        </div>
+
+        <!--
+            Div that contains the radio buttons for river route choice as well as text signifying that you are currently at the river base.
+        -->
+        <div id='page4' class="page">
+            <h1>You are on track of the dragon's footprints and you see a river up ahead.</h1>
+            <p>You notice a small dilapidated wooden bridge, but you also see the boulders in the</p>
+            <p>stream are large enough to jump across. How will you get across the river?</p>
+            <div class = 'choices'>
+                <div>
+                    <input type="radio" id = "wooden-bridge" name="river" value="Wooden Bridge" checked>
+                    <label for="Wooden Bridge">Wooden Bridge</label>
+                </div>
+                <div>
+                    <input type="radio" id = "jump-boulders" name="river" value="Jump Boulders" checked>
+                    <label for="Jump Boulders">Jump across the boulders</label>
+                </div>  
+                <div>
+                    <input type="radio" id = "swim-across" name="river" value="Swim Across" checked>
+                    <label for="Swim Across">Swim across</label>
+                </div> 
+            </div>
+           <button id="nextBtn4" class="btn btn1">Next</button>
+        </div>
+
+        <!--
+            Div that contains the radio buttons for food choice as well as text signifying that you feel hungry and need a snack.
+        -->
+        <div id='page5' class="page">
+            <h1>You start to feel hungry after swimming!</h1>
+            <p>Your food options are limited, you hear russeling in the bush, could be a small animal you can catch if skilled enough.</p>
+            <p>You also see some mushrooms growing from a tree. Mushrooms are a delicacy in the village, but you aren't if sure these are safe to eat.</p>
+            <div class = 'choices'>  
+                <div>
+                    <input type="radio" id = "hunt" name="food" value="Hunt" checked>
+                    <label for="Hunt">Try to hunt</label>
+                </div>
+                <div>
+                    <input type="radio" id = "mushroom" name="food" value="Mushroom" checked>
+                    <label for="Mushroom">Eat the mushrooms</label>
+                </div>  
+                <div>
+                    <input type="radio" id = "ignore-hunger" name="food" value="Ignore Hunger" checked>
+                    <label for="Ignore Hunger">Ignore Hunger</label>
+                </div> 
+            </div>
+           <button id="nextBtn5" class="btn btn1">Next</button>
+        </div>
+
+        <!--
+            Div that contains the radio buttons for lair entry choice as well as text signifying that you have reached the dragon's cave.
+        -->
+        <div id='page6' class="page">
+            <h1>At long last, you have reached the cave of the alleged dragon's den.</h1>
+            <p>You ponder your two options of entrance: </p>
+            <div class = 'choices'>
+                <div>
+                    <input type="radio" id = "cautious" name="lair" value="Cautious" checked>
+                    <label for="Cautious">Enter cautiously</label>
+                </div>
+                <div>
+                    <input type="radio" id = "brazenly" name="lair" value="Brazenly" checked>
+                    <label for="Brazenly">Run in brazenly!</label>
+                </div>    
+            </div>
+           <button id="nextBtn6" class="btn btn1">Next</button>
+        </div>
+
+        <!--
+            Div that contains the radio buttons for strategy choice for attacking the dragon as well as text signifying that the dragon is in front of you.
+        -->
+        <div id='page7' class="page">
+            <h1>The dragon is angry and begins attacking!</h1>
+            <p>What is your strategy?</p>
+            <div class = 'choices'>
+                <div>
+                    <input type="radio" id = "head" name="strategy" value="Head" checked>
+                    <label for="Head">Aim for the head</label>
+                </div>
+                <div>
+                    <input type="radio" id = "limbs" name="strategy" value="Limbs" checked>
+                    <label for="Limbs">Focus on the beast's limbs</label>
+                </div>
+                <div>
+                    <input type="radio" id = "heat" name="strategy" value="Heat" checked>
+                    <label for="Heat">Target the heat</label>
+                </div>
+                <div>
+                    <input type="radio" id = "defensive" name="strategy" value="Defensive" checked>
+                    <label for="Defensive">Fight defensively.</label>
+                </div>
+            </div>
+           <button id="nextBtn7" class="btn btn1">Finish Game</button>
+        </div>
+
+        <!--
+            Div that displays your final score and also has a button to start over.
+        -->
+        <div id='pageEnd' class="page">
+            <h1>The end!</h1>
+            <div>  
+               <p>Your score is <span id = "finalScore">______</span></p>
+            </div>
+            <button id="StartOver" class="btn btn1"> Try Again</button>
+        </div>
+    </body>
+    </body>
+</html>
